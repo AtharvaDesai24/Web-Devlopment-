@@ -29,7 +29,7 @@ const databUrl=process.env.ATLAS_DB_URL;
 const store=MongoStore.create({
   mongoUrl:databUrl,//Session info stores at Atlas mongo
   crypto:{
-    secret: "desai",
+    secret: process.env.SECRET,
   },
   touchAfter : 24 * 3600, //Interval (in seconds) between session updates.in sec
 });
@@ -40,7 +40,7 @@ store.on('error',()=>{
 
 const sessionOption={
     store:store,
-    secret:"desai",
+    secret: process.env.SECRET,
     resave:false,
     saveUninitialized:true,
     cookie:{
@@ -73,17 +73,6 @@ passport.serializeUser(CredentialsModel.serializeUser());
 passport.deserializeUser(CredentialsModel.deserializeUser());
 
 
-/*app.get("/demoUser",async(req,res)=>{
-  let fakeUser= new CredentialsModel({
-     email:"desai@gmail.com",
-     username: "student1",
-//we can write username Because passport-local mongoose add username and password By default.
-  })
-  const registeredUser=await CredentialsModel.register(fakeUser,"hello world");
-  res.send(registeredUser);
-
-}) 
-*/
 
 app.use((req,res,next)=>{
   

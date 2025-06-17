@@ -4,9 +4,8 @@ let url=`https://api.maptiler.com/geocoding/${info.location}.json?key=${MapToken
 let response=await fetch(url);
 let geocoding= await response.json();
 
-//console.log(geocoding.features[0].center);
 let [lng, lat]=await geocoding.features[0].center;
-//console.log(coordinates);
+
 return {lng ,lat};
 };
 
@@ -33,11 +32,6 @@ const Coordinates=  GetCoordinates(Listing_Location);
       .setLngLat([Longitude, Latitude])
       .addTo(map)
       .setPopup(popup); // sets a popup on this marker
-
-
-     
-
-
     }).catch((err)=>{
     console.log(err);
  });

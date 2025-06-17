@@ -1,4 +1,8 @@
 {
+  "engines":{
+    "node": "v23.5.0"
+  },
+
   "name": "atharva",
   "version": "1.0.0",
   "description": "yep",
@@ -11,6 +15,7 @@
   "dependencies": {
     "cloudinary": "^1.30.0",
     "connect-flash": "^0.1.1",
+    "joi": "^17.13.3",
     "connect-mongo": "^5.1.0",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
