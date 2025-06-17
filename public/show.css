@@ -1,0 +1,103 @@
+body{
+  
+    background-color: azure;
+}
+form{
+    display: inline-block;
+    margin: 30px;
+}
+footer{
+    position: relative;
+    bottom: 0px;
+}
+
+.review{
+    height: fit-content;
+    width: 88%;
+    margin: auto;
+    margin-top: 60px;
+}
+.review_info{
+    height: fit-content;
+    width: 100%;
+    border: 2px rgba(0, 0, 0, 0.574) solid;
+    margin-top: 30px;
+   
+    border-radius: 30px;
+    border-top-left-radius: 0px;
+    padding: 25px;
+}
+
+.n{
+    font-size: 1.1rem;
+    font-family: monospace;
+    margin: 12px;
+    position: relative;
+    top: 15px;
+    bottom: 1.8rem;
+    
+}
+
+.n p{
+    font-size: 1.8rem;
+    font-family: cursive;
+    position: relative;
+    bottom: 10px;
+}
+
+
+
+.Del{
+    border: 1px rgb(255, 255, 255) solid;
+    font-size: 1.5rem;
+   
+    margin: auto;
+     position: relative;
+    left: 62rem;        
+   /* bottom: 120px;*/
+   
+    height: 40px;
+    width: 30px;
+    background-color: black;
+   
+}
+.Del:hover{
+    border: 1px rgb(211, 36, 36) solid;
+    opacity: 0.6;
+}
+
+.flash-Msg{
+    height: fit-content !important  ;
+    width: fit-content  !important;
+    position: relative  !important ;
+    left: 20px !important ;
+    top: 10px !important;
+    background-color: rgb(9, 196, 96)  !important;
+   
+    color:  white !important;
+    font-size: 14px !important;
+    padding: 6px !important;
+    border-radius: 12px !important;
+    border: 2px black !important;
+}
+
+
+.map-Cont{
+    margin-top: 40px;
+}
+
+#map{
+    height: 400px;
+    width: 80vh;
+
+}
+
+    .mapboxgl-popup {
+        max-width: 200px;
+    
+    }
+
+ #marker {
+
+        cursor: pointer;
+    }

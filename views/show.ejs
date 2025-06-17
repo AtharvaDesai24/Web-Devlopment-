@@ -1,0 +1,110 @@
+
+    <title>Show</title>
+    <% layout("/layout/boilerplate") %>
+    <link rel="stylesheet" href="/show.css">
+</head>
+<body>
+<script>
+    const info= <%-JSON.stringify(info)%>;//ignore the error
+  const MapToken= "<%=process.env.MAP_ACCESS_TOKEN%>";//sending variable to map.js
+</script>
+
+
+
+  <div class="card mb-3" style="max-width: 990px; margin-top: 40px;">
+    <div class="row g-0">
+
+     <% if (info.image.url){ %>
+      <div class="col-md-4">
+        <img src=<%= info.image.url %> class="img-fluid rounded-start" alt="https://vignette1.wikia.nocookie.net/oggyandthecockroaches/images/1/19/Images_%282%29.jpg/revision/latest?cb=20130305074953">
+      </div>
+      <% } %>
+   
+
+
+
+      <div class="col-md-8">
+        <div class="card-body">
+        
+          <h2><u><i><%= info.title %></i></u></h2>
+          <p>Cost &#8377;<%= info.price.toLocaleString("en-IN") %></p>
+          <p>Location:-<%= info.location %>&nbsp;</p>
+          <p>Country:-<%= info.country %>&nbsp;</p>
+           
+          
+          <p>Description:- <%= info.description %> </p>
+         
+           <p>Owner:- <i><%= info.Owner.username%></i>  </p>
+
+
+
+          <% if(currUser && currUser._id.equals(info.Owner._id)) {%>
+
+          <form method="get" action="/listings/<%= info._id %>/edit">
+            <button >Edit</button>
+          </form>
+        
+          <form method="post" action="/listings/<%= info._id %>?_method=DELETE">
+            <button >Delete</button>
+          </form>
+        
+          <%  }%>
+          
+            <% if(currUser) {%>
+             <form method="get" action="/listings/<%= info._id %>/review">
+            <button >Add Review</button>
+          </form>
+            <% } %>       
+   
+  
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <hr>
+
+<% if(info.Reviews.length>0)  {%>
+
+  <div class="review">
+    <h2 style="text-align: center; font-family: cursive; font-size: 34px;"><i><b><u>All Reviews</u></b></i></h2>
+  <br><br><br>
+
+    <% for(let rev of info.Reviews) {%>
+    <div class="review_info">
+      <h2 class="n" ><p>@<%= rev.author.username %></p></h2>
+      <p class="starability-result" data-rating="<%= rev.rating %>"></p>
+      
+     <h2 class="n"><u>Comment</u>:- <%= rev.Comment %></h2>
+     <h2 class="n"><u>Created_at</u>:-<%= rev.CreatedAt %></h2>
+       
+     <%  if(currUser && currUser._id.equals(rev.author._id)) { %>
+      <form  class="Del" method="post" action="/listings/<%= info.id %>/review/<%=rev.id%>?_method=DELETE">
+        <button ><i class="fa-regular fa-trash-can"></i> </button>
+      </form>
+      <% } %>
+     
+    </div>
+ 
+    <% } %>
+  </div>
+<% } %>
+
+
+
+       
+
+  <div class="map-Cont">
+   <div class="col-8  mb-3">
+    <h2>
+      Where you'll be
+    </h2>
+    <div id="map"></div>
+
+   </div>
+   </div>
+
+
+
+<script src="/js/map.js"></script> <!--accessing Maptoken variable from above script-->
+</body>

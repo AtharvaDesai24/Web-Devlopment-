@@ -1,0 +1,12 @@
+.side{
+    display: flex;
+   
+    width: 100%;
+    height: fit-content;
+
+}
+.k{
+    margin-left: 50px;
+    position: relative;
+    bottom: 7px;
+}

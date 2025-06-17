@@ -1,0 +1,42 @@
+button{
+    height: 45px;
+    width: 85px;
+    border: 1px black solid;
+     border-radius: 8px;
+     position: relative;
+    left: 650px;
+    top: 27px;
+cursor: pointer;
+}
+
+label{
+    font-size: 20px;
+}
+
+
+form{
+    border: 2px black solid;
+}
+.side{
+    display: flex;
+   
+    width: 100%;
+    height: fit-content;
+
+}
+.k{
+    margin-left: 50px;
+    position: relative;
+    bottom: 7px;
+}
+
+img{
+    height: 160px;
+    width: 280px;
+    position: relative;
+     left: 18px;
+    border: 2px ;
+    cursor: pointer;
+     border: 2px black solid;
+}
+

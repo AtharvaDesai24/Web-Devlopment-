@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="/update.css">
+</head>
+<body>
+
+    <% layout("/layout/boilerplate") %>
+    <br><br>
+    <h1>Edit & Update</h1>
+    <form method="post" action="/listings/<%= info.id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+
+      
+     
+        <div class="mb-3">
+        <label class="form-label">
+           edit Title:-
+            <input  class="form-control" type="text"  name="title" value="<%= info.title %>" required>
+            <div class="invalid-feedback">Title Required!!.</div>
+        </label>
+        </div>
+        <br><br>
+
+
+        <div class="mb-3">
+        <label class="form-label">
+           Edit Description:-
+            <textarea class="form-control"  type="text"name="description" cols="28" rows="6"  required ><%= info. description%></textarea>
+            <div class="invalid-feedback">Please Add description!!.</div>
+        </label>
+        </div>
+        <br><br>
+        
+        <div class="side">
+        <div class="mb-3 k">
+        <label class="form-label">
+           Enter price:-
+            <input class="form-control" name="price" type="number"  value="<%= info.price %>"  required>
+            <div class="invalid-feedback">Please enter a valid price </div>
+        </label>
+        </div>
+        <br><br>
+
+        <div class="mb-3 k">
+        <label class="form-label">
+           edit location:-
+            <input class="form-control" type="text" name="location"  value="<%= info.location %>"  required>
+            <div class="invalid-feedback">Location Required!!.</div>
+        </label>
+        </div>
+        </div>
+        <br><br>
+
+
+
+        <div class="mb-3">
+        <label class="form-label">
+            Edit country:-
+            <input class="form-control" type="text" name="country"  value="<%= info.country %>"  required>
+            <div class="invalid-feedback">Country name is Required!!.</div>
+        </label>
+        </div>
+        <br><br>
+
+        <div class="mb-3">
+          <p>  Original Listing Image</p>
+          
+         <img  src="<%= info.image.url %>">
+        </div>
+
+
+        <div class="mb-3">
+        <label class="form-label">
+            Edit images:-
+            <input   class="form-control" name="image" type="file"  >
+            <div class="invalid-feedback">Add image !!.</div>
+        </label>
+        </div>
+        <br><br><br><br>
+        
+       
+        <button class="btn btn btn-dark">Save</button>
+
+    </form>
+</body>
+</html>

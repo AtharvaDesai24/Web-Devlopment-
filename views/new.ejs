@@ -1,0 +1,90 @@
+
+    <title>New</title>
+    <% layout("/layout/boilerplate") %>
+    <link rel="stylesheet" href="/new.css">
+</head>
+<body>
+         <div class="row offset-3">
+
+     <div class="box col-8">
+         <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+
+            <div class="mb-3">
+        <label class="form-label">
+            Title:-
+            <input  class="form-control" type="text" name="title" placeholder="Title " required>
+            <div class="valid-feedback">Title look's good..</div>
+            <div class="invalid-feedback">Title Required!!.</div>
+        </label>
+        </div>
+       
+    
+        <br><br>
+
+
+        <div class="mb-3">
+        <label class="form-label">
+            Description:-
+            <textarea  class="form-control" type="text"name="description" cols="37" rows="5" placeholder="Description " required></textarea>
+            <div class="valid-feedback">Description look's good..</div>
+            <div class="invalid-feedback">Please Add description!!.</div>
+        </label>
+        </div>
+        <br><br>
+
+
+        <div class="side">
+        <div class="mb-3">
+        <label class="form-label">
+           Enter price:-
+
+            <input class="form-control" name="price" type="number" placeholder="price" required>
+            <div class="valid-feedback">Price look's good..</div>
+            <div class="invalid-feedback">Please enter a valid price </div>
+        </label>
+        </div>
+        
+
+<div class="mb-3 k">
+        <label class="form-label">
+           Enter location:-
+            <input class="form-control" type="text" name="location" placeholder="location " required>
+            <div class="valid-feedback">location look's good..</div>
+            <div class="invalid-feedback">Location Required!!.</div>
+        </label>
+        </div>
+     
+    </div>
+
+
+    <br><br>
+
+<div class="mb-3">
+        <label class="form-label">
+            Enter country:-
+            <input class="form-control" type="text" name="country" placeholder="country"  required>
+            <div class="valid-feedback"> good..</div>
+            <div class="invalid-feedback">Country name is Required!!.</div>
+        </label>
+        </div>
+        <br><br>
+
+
+<div class="mb-3">
+        <label class="form-label">
+            Upload images:-
+          <input name="image" placeholder="Add  image " class="form-control" type="file" required>
+        </label>
+        </div>
+        <br><br>
+
+
+
+          <button class="btn btn btn-dark" type="submit">Ok</button>
+         </form>
+
+</div>
+
+</div>
+<br><br><br><br>
+</body>
